@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-02-01T14:31:52.181Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="f_EGg-VJqWDsPgW5eax4" version="20.8.15" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-01T14:32:01.755Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="TJIceJdKrCZmga-foJyn" version="20.8.15" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="574" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -124,7 +124,7 @@
         <mxCell id="Dl1eq_BeVg3rwWrBzj42-4" value="Jeu du &quot;Simon&quot; pour activer la bombe" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=10;align=center;strokeWidth=1;spacing=6;spacingTop=-4;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="880" y="240" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Dl1eq_BeVg3rwWrBzj42-12" value="Diaporama de l&#39;explosion du vaisseau / Fin du jeu" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="Dl1eq_BeVg3rwWrBzj42-12" value="Diaporama de l&#39;explosion du vaisseau / Fin du jeu" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;glass=0;strokeWidth=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1160" y="40" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Dl1eq_BeVg3rwWrBzj42-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#b85450;fillColor=#f8cecc;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Dl1eq_BeVg3rwWrBzj42-15" target="Dl1eq_BeVg3rwWrBzj42-32" edge="1">

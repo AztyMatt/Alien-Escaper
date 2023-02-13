@@ -19,12 +19,45 @@ body{
 }
 
 .flex-center{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 
 .flex-full-center{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.full{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-height: none !important;
+    height: 100vh !important;
+}
+
+.commands{
+    visibility: hidden;
+    cursor: pointer;
+    transform: scale(1);
+    padding: 10px;
+    border: none;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #204987;
+    color: #fcc801;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    transition: transform 0.5s ease-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
 }

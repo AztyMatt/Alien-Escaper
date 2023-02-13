@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
     TL
     .from("#background", {autoAlpha:0, duration:1, ease:"linear"})
     .from("#menu", {autoAlpha:0, duration:1.5, ease:"linear"})
-    .from("#commands button", {autoAlpha:0, duration:0.5, ease:"linear"})
+    .from(".commands", {autoAlpha:0, duration:0.5, ease:"linear"})
 
         TL.play();
     }
@@ -24,11 +24,21 @@ window.addEventListener('load', () => {
 
         $("#right").click(function(){
             i += 1
+            console.log(i)
             TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"ease-out"});
+
+            if (i == 7) {
+                console.log("coucou")
+                TL
+                .from(".end div", {backgroundColor: "rgba(0,0,0, 0.4)", duration:0.5, ease:"linear"})
+                .from(".commands", {autoAlpha:0, duration:0.5, ease:"linear"})
+                TL.play();
+            }
         })
 
         $("#left").click(function(){
+            console.log(i)
             i -= 1
-        })
+        })     
     }
 });

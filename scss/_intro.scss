@@ -27,10 +27,21 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
+
+            .end{
+                position: relative;
+
+                >div{
+                    background-color: rgba(0,0,0,0);
+                    
+                    >div{
+                        position: absolute;
+                    }
+                }
+            }
         }
     
         .carrousel-btn {
-            position: absolute;
             top: 0;
             left: 0;
             width: 100%;

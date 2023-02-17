@@ -19,25 +19,20 @@ window.addEventListener('load', () => {
         const TL = gsap.timeline({paused: true});
 
         var boxes = $(".image");
-        let i=0
-        TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"ease-out"});
+        let i=0;
+        TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"power1", delay: 0.25});
 
         $("#right").click(function(){
             i += 1
-            console.log(i)
-            TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"ease-out"});
+            TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"power1", delay: 0.25});
 
             if (i == 7) {
-                console.log("coucou")
-                TL
-                .from(".end div", {backgroundColor: "rgba(0,0,0, 0.4)", duration:0.5, ease:"linear"})
-                .from(".commands", {autoAlpha:0, duration:0.5, ease:"linear"})
-                TL.play();
+                TweenMax.to(".end div", 1.5, {autoAlpha:1, ease:"linear", delay: 3})
+                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 4})
             }
         })
 
         $("#left").click(function(){
-            console.log(i)
             i -= 1
         })     
     }

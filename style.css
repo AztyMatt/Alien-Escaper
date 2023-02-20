@@ -117,13 +117,46 @@
 }
 
 #laboratoire {
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
-#laboratoire img {
-  position: absolute;
-  width: 100%;
+#laboratoire .scene {
+  position: relative;
   height: 100vh;
-  display: block;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+#laboratoire .scene .scenery {
+  position: absolute;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#laboratoire .scene .object {
+  position: absolute;
+  width: 5%;
+}
+#laboratoire .scene #lighter {
+  left: 25%;
+  top: 48.5%;
+}
+#laboratoire .scene #bleach {
+  left: 42%;
+  top: 37.5%;
+}
+#laboratoire .scene #tank {
+  left: 51.5%;
+  top: 43.5%;
+}
+#laboratoire .scene #landing_net {
+  left: 62.5%;
+  top: 43.5%;
+}
+#laboratoire .scene #toilet_bowl {
+  left: 47.5%;
+  top: 27.5%;
 }
 
 * {

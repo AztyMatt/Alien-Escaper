@@ -13,21 +13,36 @@
     </head>
     <body>
         <main id="laboratoire">
-            <div class="scene">
-                <img src="medias/laboratoire/background.svg" id="background" class="scenery" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/objects/bleach.png" id="bleach" class="object" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/objects/landing_net.png" id="landing_net" class="object" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/objects/lighter.png" id="lighter" class="object" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/objects/toilet_bowl.png" id="toilet_bowl" class="object" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/tanks.svg" class="scenery" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/furniture.svg" class="scenery" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/objects/tank.png" id="tank" class="object" alt="Le laboratoire"/>
-                <img src="medias/laboratoire/coat_hanger.svg" class="scenery" alt="Le laboratoire"/>
+            <div id="next" class="flex-full-center next">
+                <div>
+                    <button class="commands" onclick="location.href='couloir.html'">Prochaine salle</button>
+                </div>
+            </div>
+            <div class="scene_wrapper">
+                <div class="scene">
+                    <img src="medias/laboratoire/background.svg" id="background" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/bleach.png" id="bleach" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/landing_net.png" id="landing_net" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/lighter.png" id="lighter" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/toilet_bowl.png" id="toilet_bowl" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/tanks.svg" class="scenery" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/furniture.svg" class="scenery" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/tank.png" id="tank" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/coat_hanger.svg" class="scenery" alt="Le laboratoire"/>
+                </div>
+                <div class="collectibles">
+                    <img src="medias/laboratoire/objects/bleach.png" id="bleach_collectible" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/lighter.png" id="lighter_collectible" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/tank.png" id="tank_collectible" alt="Le laboratoire"/>
+                </div>
+            </div>
+            <div class="background">
+                <video src="medias/background.mp4" type="video/mp4" autoplay="" loop="" muted="" data-keepplaying=""></video>
             </div>
         </main>
     </body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script type="text/javascript" src="js/animation.js"></script>
-    <script type="text/javascript" src="js/carroussel.js"></script>
+
+    <script type="text/javascript" src="js/laboratoire.js"></script>
 </html>

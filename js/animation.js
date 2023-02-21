@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
         const TL = gsap.timeline({paused: true});
     
     TL
-    .from("#background", {autoAlpha:0, duration:1, ease:"linear"})
+    .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
     .from("#menu", {autoAlpha:0, duration:1.5, ease:"linear"})
     .from(".commands", {autoAlpha:0, duration:0.5, ease:"linear"})
 
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
             TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"power1", delay: 0.25});
 
             if (i == 7) {
-                TweenMax.to(".end div", 1.5, {autoAlpha:1, ease:"linear", delay: 3})
+                TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 3})
                 TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 4})
             }
         })
@@ -35,5 +35,16 @@ window.addEventListener('load', () => {
         $("#left").click(function(){
             i -= 1
         })     
+    }
+
+    //Laboratoire
+    if (document.querySelector('#laboratoire') !== null){
+        const TL = gsap.timeline({paused: true});
+    
+    TL
+    .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
+    .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
+    .from(".collectibles img", {autoAlpha:0, duration:1, stagger:1, ease:"linear"})
+        TL.play();
     }
 });

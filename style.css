@@ -11,7 +11,6 @@
 }
 #accueil #menu > div {
   width: 400px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -23,20 +22,6 @@
 }
 #accueil #menu > div > #logo > h1 {
   text-align: center;
-}
-#accueil #background {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-#accueil #background video {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
 }
 
 #intro .carrousel {
@@ -70,12 +55,6 @@
 #intro .carrousel .carrousel-container .end {
   position: relative;
 }
-#intro .carrousel .carrousel-container .end > div {
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-}
 #intro .carrousel .carrousel-container .end > div > div {
   position: absolute;
 }
@@ -96,8 +75,7 @@
   padding: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 #intro .carrousel .carrousel-btn > p > span {
   font-size: 60px !important;
@@ -116,47 +94,78 @@
   right: 0;
 }
 
-#laboratoire {
-  display: flex;
-  justify-content: center;
-}
-#laboratoire .scene {
+#laboratoire .scene_wrapper {
   position: relative;
+  z-index: 5;
+  width: 100%;
   height: 100vh;
-  width: 90%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  visibility: hidden;
 }
-#laboratoire .scene .scenery {
+#laboratoire .scene_wrapper .scene {
+  position: relative;
+  width: 90%;
+  height: auto;
+}
+#laboratoire .scene_wrapper .scene #background {
+  width: 100%;
+  margin: auto;
+}
+#laboratoire .scene_wrapper .scene .scenery {
   position: absolute;
-  max-width: 100%;
-  height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  width: 100%;
+  top: 0;
+  right: 0;
+  margin: auto;
+  pointer-events: none;
 }
-#laboratoire .scene .object {
+#laboratoire .scene_wrapper .scene .object {
   position: absolute;
   width: 5%;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.5s;
 }
-#laboratoire .scene #lighter {
-  left: 25%;
-  top: 48.5%;
+#laboratoire .scene_wrapper .scene #lighter {
+  left: 25.5%;
+  top: 50.5%;
+  width: 3%;
 }
-#laboratoire .scene #bleach {
-  left: 42%;
-  top: 37.5%;
+#laboratoire .scene_wrapper .scene #bleach {
+  left: 41.75%;
+  top: 32.5%;
 }
-#laboratoire .scene #tank {
+#laboratoire .scene_wrapper .scene #tank {
   left: 51.5%;
   top: 43.5%;
 }
-#laboratoire .scene #landing_net {
+#laboratoire .scene_wrapper .scene #landing_net {
   left: 62.5%;
-  top: 43.5%;
+  top: 40.5%;
 }
-#laboratoire .scene #toilet_bowl {
+#laboratoire .scene_wrapper .scene #toilet_bowl {
+  width: 4%;
   left: 47.5%;
-  top: 27.5%;
+  top: 26.5%;
+}
+#laboratoire .scene_wrapper .collectibles {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+#laboratoire .scene_wrapper .collectibles img {
+  width: 75px;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: 1s;
+  visibility: hidden;
 }
 
 * {
@@ -172,6 +181,31 @@ body {
 body main {
   width: 100%;
   height: 100%;
+}
+
+.background {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.background video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.next {
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .flex-center {

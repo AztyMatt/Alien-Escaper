@@ -15,19 +15,15 @@ const restart = (() => {
     $('p').text('SIMON');
 });
 
-const checkSequence = (color => {
-    if(pattern[clicks] !== color) {
-        alert('Lost!');
-        restart();
-    }
-});
-
 const animateClick = ((color, clickClass) => {
     $('#' + color).addClass(clickClass);
     setTimeout(() => {
         $('#' + color).removeClass(clickClass);
     }, 150);
 });
+
+
+
 
 const animateSequence = (idx => {
     let color = pattern[idx];
@@ -37,19 +33,32 @@ const animateSequence = (idx => {
         if(++idx < pattern.length) {
             animateSequence(idx);
         }
-    }, 500);
+    }, 1000);
 });
 
 const nextSequence = (() => {
-    let idx = Math.floor(Math.random() * 4);
-    console.log("idx : "+idx)
-    let newColor = colors[idx];
-    console.log("colors : "+colors)
-    pattern.push(newColor);
-    $('p').text(++level);
+    let iteration=1
+    if(pattern.length === 0){
+        iteration=4
+    }
+    for (var i = 0; i < iteration; i++) {
+        let idx = Math.floor(Math.random() * 4);                                         console.log("idx : "+idx);
+        let newColor = colors[idx];                                                      console.log("colors : "+colors);
+        pattern.push(newColor);
+        $('p').text(++level);                                                            console.log("level : "+level);
+    }
 });
 
+
+
 // ACTION LISTENERS
+
+const checkSequence = (color => {
+    if(pattern[clicks] !== color) {
+        alert('Lost!');
+        restart();
+    }
+});
 
 $('.color-btn').click(e => {
     let color = e.target.id;

@@ -4,6 +4,7 @@ body {
 
 .container {
     margin-top: 175px;
+    pointer-events: inherit;
 }
 
 .row {

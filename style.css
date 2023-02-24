@@ -158,7 +158,6 @@ body main {
 }
 
 .background {
-  visibility: hidden;
   position: absolute;
   top: 0;
   width: 100%;
@@ -181,7 +180,6 @@ body main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  visibility: hidden;
 }
 .scene_wrapper .scene {
   position: relative;
@@ -190,7 +188,11 @@ body main {
 }
 .scene_wrapper .scene .background-scene {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .scene_wrapper .scene .scenery {
   position: absolute;

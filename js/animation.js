@@ -26,9 +26,9 @@ window.addEventListener('load', () => {
             i += 1
             TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"power1", delay: 0.25});
 
-            if (i == 7) {
-                TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 1})
-                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 2})
+            if (i == 9) {
+                TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 2})
+                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 3})
             }
         })
 

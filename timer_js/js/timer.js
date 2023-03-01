@@ -8,32 +8,38 @@ if (targetTime == null && currentTime == null){
     targetTime = new Date(currentTime.getTime() + (minutes * 60000));
     localStorage.setItem('currentTime', currentTime);
     localStorage.setItem('targetTime',targetTime);
-    console.log(currentTime);
-    console.log(targetTime);
+    //console.log(currentTime);
+    //console.log(targetTime);
 }
 
 function prependZero(number) {
-    if (number < 9)
+    if (number < 10)
         return "0" + number;
     else
         return number;
 }
 
 function getTime(date){
-    var seconds = prependZero(date.getSeconds());
-    var minutes = prependZero(date.getMinutes());
-    return minutes+" "+seconds;
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    if (minutes == 00 && seconds == 00){
+        document.getElementById('timer').innerText = "BOUM EXPLOSION ARRRGHHHH *mort*";
+    }else if(minutes <= 5){
+        minutes = prependZero(minutes);
+        seconds = prependZero(seconds);
+        document.getElementById('timer').innerText = minutes+":"+seconds;
+    }
 }
 
-console.log(new Date)
-console.log("Temps actuel: "+getTime(new Date(currentTime)));
-console.log("Temps target: "+getTime(new Date(targetTime)));
-var interval = new Date(targetTime) - new Date(currentTime);
-console.log("Temps interval: "+getTime(new Date(interval)))
-console.log("----------------------------------")
+//console.log(new Date)
+//console.log("Temps actuel: "+getTime(new Date(currentTime)));
+//console.log("Temps target: "+getTime(new Date(targetTime)));
+//var interval = new Date(targetTime) - new Date(currentTime);
+//console.log("Temps interval: "+getTime(new Date(interval)))
+//console.log("----------------------------------")
 
 setInterval(function(){
-    var start = new Date().getTime();
     var currentTime = 
     (
     (new Date(localStorage.getItem('targetTime')).getTime())
@@ -47,6 +53,6 @@ setInterval(function(){
 
     //date du debut + 5 - currenttime
     //convert en chiffre pour faire operation !
-    console.log(getTime(new Date(currentTime)));
+    getTime(new Date(currentTime));
 }, 1000);
 };

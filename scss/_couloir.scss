@@ -7,8 +7,17 @@ img[usemap] {
 .licorn{
     position: absolute;
     width: 3.5%;
-    top: 64%;
-    left: 22%;
+    top: 68%;
+    left: 20%;
+}
+
+#alarm{
+    opacity: 0;
+    transition: 1s;
+}
+
+.active{
+    opacity: 100 !important;
 }
 
 .discussion{

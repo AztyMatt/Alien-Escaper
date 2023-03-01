@@ -9,37 +9,50 @@
         <link rel="shortcut icon" type="image/x-icon" href="medias/logo.png" />
 
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
-        <script src="https://rawcdn.githack.com/kemayo/maphilight/7932449fbc49c7767fbd72a807110c632c11ee95/jquery.maphilight.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
         <main id="couloir">
+            <div id="next" class="flex-full-center next">
+                <div>
+                    <button class="commands" onclick="location.href='vaisseau.html'">Prochaine salle</button>
+                </div>
+            </div>
+            <div class="discussion">
+                <img src="medias/couloir/alien.png" alt="Alien qui vous parle">
+                <div>
+                    <div class="message">
+                        <p>
+                            Clique sur mon mot ! <br>
+                            <br>
+                            Mon premier est utile pour ce reposer.<br>
+                            On souffle dans mon deuxième pour la chasse.<br>
+                            Mon troisième ce fait avec des lacets.<br>
+                            <br>
+                            Mon tout est animal féérique.<br>
+                        </p>
+                    </div>
+                    <div id="exit">
+                        <button class="commands">Je pense avoir trouvé !</button>
+                    </div>
+                </div>
+            </div>
             <div class="scene_wrapper">
                 <div class="scene">
-                    <img src="medias/couloir/couloir.png" class="background-scene" alt="Le couloir" usemap="#map_example">
-                    <map name="map_example">
-                        <area id="a" alt="alien" title="Parle moi" coords="889,467,926,610,1010,636,1082,613,1103,511,1077,409,1057,391" shape="poly">
+                    <img src="medias/couloir/object/licorn.png" class="licorn" alt="La licorne">
+                    <img src="medias/couloir/couloir.png" class="background-scene" alt="Le couloir" usemap="#alien">
+                    <map name="alien">
+                        <area alt="Alien souffrant" title="À l'aide..." coords="924,601,949,599,964,566,973,550,947,553,946,538,910,531,910,514,935,509,927,491,891,489,892,468,932,465,953,474,967,492,975,503,986,523,984,502,987,460,1002,444,1025,428,1036,410,1049,392,1063,392,1045,418,1054,425,1066,433,1062,412,1057,415,1085,415,1090,430,1074,447,1077,468,1057,485,1072,491,1078,497,1094,502,1095,512,1077,517,1069,529,1058,528,1048,517,1028,520,1025,537,1040,543,1054,549,1061,564,1068,582,1077,595,1080,608,1062,621,1054,596,1042,572,1036,556,1017,549,1013,572,1023,589,1029,608,1020,624,1015,640,1003,613,1005,582,1000,560,1005,543,990,567,982,587,970,602,939,614,926,610" shape="poly">
                     </map>
                 </div>
             </div>
+            <div class="background">
+                <video src="medias/background.mp4" type="video/mp4" autoplay="" loop="" muted="" data-keepplaying=""></video>
+            </div>
         </main>
     </body>
-    <script>
-        $(function () {
-            $(".background-scene").maphilight({
-                fillColor: '000000',
-                fillOpacity: 0.3,
-                stroke: true,
-                strokeColor: '000000',
-                alwaysOn: 'true'
-            });
-        });
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/jquery.rwdImageMaps.min.js"></script>
 
-        //https://github.com/davidjbradshaw/image-map-resizer
-    </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script type="text/javascript" src="js/animation.js"></script>
 </html>

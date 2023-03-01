@@ -27,8 +27,8 @@ window.addEventListener('load', () => {
             TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"power1", delay: 0.25});
 
             if (i == 7) {
-                TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 3})
-                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 4})
+                TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 1})
+                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 2})
             }
         })
 
@@ -44,9 +44,51 @@ window.addEventListener('load', () => {
     TL
     .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
     .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
-    .from(".collectibles img", {autoAlpha:0, duration:1, stagger:1, ease:"linear"})
+    .from(".collectibles div", {autoAlpha:0, duration:1, stagger:1, ease:"linear"})
         TL.play();
     }
 
     //Couloir
+    if (document.querySelector('#couloir') !== null){
+        const TL = gsap.timeline({paused: true});
+
+    TL
+    .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
+    .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
+        TL.play();
+
+
+    $('area').on('click', function() {
+        TL
+        .from(".discussion", {autoAlpha:0, duration:1, ease:"linear"})
+        .from(".discussion img", {autoAlpha:0, duration:1, ease:"linear"})
+        .from(".message", {autoAlpha:0, duration:1, ease:"linear"})
+        .from("#exit button", {autoAlpha:0, duration:1, ease:"linear"})
+            TL.play();
+        event.preventDefault();
+    });
+
+    $('#exit button').on('click', function() {
+        TweenMax.set([".discussion", ".discussion img", ".message", "#exit button"], {clearProps: 'all'});
+        event.preventDefault();
+    });
+
+    $('.licorn').on('click', function() {
+        TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 1})
+        TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 2})
+        event.preventDefault();
+    });
+    }
+
+    //Vaisseau
+    if (document.querySelector('#vaisseau') !== null){
+        const TL = gsap.timeline({paused: true});
+    
+    TL
+    .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
+    .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
+        TL.play();
+    }
 });
+
+    

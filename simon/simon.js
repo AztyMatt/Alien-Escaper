@@ -37,6 +37,10 @@ const animateSequence = (idx => {
 });
 
 const nextSequence = (() => {
+    if(level==6){
+        alert('Gagné! Tu as finis le jeu félicitation !');
+    }
+
     let iteration=1
     if(pattern.length === 0){
         iteration=4

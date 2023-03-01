@@ -11,7 +11,6 @@
 }
 #accueil #menu > div {
   width: 400px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -76,8 +75,7 @@
   padding: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 #intro .carrousel .carrousel-btn > p > span {
   font-size: 60px !important;
@@ -134,12 +132,73 @@
   display: flex;
   flex-direction: row;
 }
-#laboratoire .collectibles img {
+#laboratoire .collectibles div {
+  background-color: #204987;
+  border: 5px solid #fcc801;
+  border-radius: 50%;
+}
+#laboratoire .collectibles div:not(:last-child) {
+  margin-right: 10px;
+}
+#laboratoire .collectibles div img {
   width: 75px;
   filter: grayscale(1);
-  opacity: 0.5;
+  opacity: 0;
   transition: 1s;
+}
+
+img[usemap] {
+  border: none;
+  height: auto;
+  max-width: 100%;
+}
+
+.licorn {
+  position: absolute;
+  width: 3.5%;
+  top: 64%;
+  left: 22%;
+}
+
+.discussion {
   visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: end;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.discussion > div {
+  height: auto;
+  width: 40%;
+  padding: 25px;
+  border-radius: 5px;
+}
+.discussion > div .message {
+  background-color: #ffffff;
+  color: #000000;
+  height: auto;
+  width: 100%;
+  padding: 25px;
+  border-radius: 5px;
+}
+.discussion > div .message p {
+  font-size: 25px;
+}
+.discussion > div .commands {
+  width: auto;
+  margin: 25px;
+}
+.discussion img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 * {
@@ -158,6 +217,7 @@ body main {
 }
 
 .background {
+  visibility: hidden;
   position: absolute;
   top: 0;
   width: 100%;
@@ -180,6 +240,7 @@ body main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  visibility: hidden;
 }
 .scene_wrapper .scene {
   position: relative;
@@ -188,11 +249,6 @@ body main {
 }
 .scene_wrapper .scene .background-scene {
   width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .scene_wrapper .scene .scenery {
   position: absolute;
@@ -241,17 +297,21 @@ body main {
   visibility: hidden;
   cursor: pointer;
   transform: scale(1);
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
   width: 300px;
   border-radius: 5px;
   background-color: #204987;
   color: #fcc801;
-  font-size: 35px;
+  font-size: 30px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
   transition: transform 0.5s ease-out;
 }
 .commands:hover {
   transform: scale(1.1);
+}
+
+area {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

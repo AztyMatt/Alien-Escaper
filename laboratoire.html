@@ -20,25 +20,37 @@
             </div>
             <div class="scene_wrapper">
                 <div class="scene">
-                    <img src="medias/laboratoire/background.svg" class="background-scene" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/background.png" class="background-scene" alt="Le laboratoire" usemap="#coat_hanger"/>
                     <img src="medias/laboratoire/objects/bleach.png" id="bleach" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/landing_net.png" id="landing_net" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/lighter.png" id="lighter" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/toilet_bowl.png" id="toilet_bowl" class="object" alt="Le laboratoire"/>
-                    <img src="medias/laboratoire/tanks.svg" class="scenery" alt="Le laboratoire"/>
-                    <img src="medias/laboratoire/furniture.svg" class="scenery" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/tanks.png" class="scenery" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/furniture.png" class="scenery" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/tank.png" id="tank" class="object" alt="Le laboratoire"/>
-                    <img src="medias/laboratoire/coat_hanger.svg" class="scenery" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/coat_hanger.png" class="scenery" alt="Le laboratoire"/>
+                    <map name="coat_hanger">
+                        <area alt="Porte-combinaison" title="Il y a peut-être quelque chose ici...." coords="946,533,955,464,946,461,950,444,959,412,949,412,956,400,958,351,946,342,962,345,970,336,976,354,1085,407,1094,403,1100,404,1103,417,1133,435,1133,439,1100,423,1126,560,1049,600,993,562" shape="poly">
+                    </map>    
                 </div>
                 <div class="collectibles">
                     <div>
-                        <img src="medias/laboratoire/objects/bleach.png" id="bleach_collectible" alt="Le laboratoire"/>
+                        <div>
+                            <img src="medias/laboratoire/objects/bleach.png" id="bleach_collectible" alt="Le laboratoire"/>
+                        </div>
+                        <p>Lessive</p>
                     </div>
                     <div>
-                        <img src="medias/laboratoire/objects/lighter.png" id="lighter_collectible" alt="Le laboratoire"/>
+                        <div>
+                            <img src="medias/laboratoire/objects/lighter.png" id="lighter_collectible" alt="Le laboratoire"/>
+                        </div>
+                        <p>Briquet</p>
                     </div>
                     <div>
-                        <img src="medias/laboratoire/objects/tank.png" id="tank_collectible" alt="Le laboratoire"/>
+                        <div>
+                            <img src="medias/laboratoire/objects/tank.png" id="tank_collectible" alt="Le laboratoire"/>
+                        </div>
+                        <p>Bidon</p>
                     </div>
                 </div>
             </div>
@@ -47,6 +59,9 @@
             </div>
         </main>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/jquery.rwdImageMaps.min.js"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script type="text/javascript" src="js/animation.js"></script>
 

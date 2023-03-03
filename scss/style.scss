@@ -3,6 +3,7 @@
 @import 'laboratoire';
 @import 'couloir';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 *{
     margin: 0;
@@ -121,4 +122,8 @@ body{
 
 area{
     cursor: pointer;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
 }

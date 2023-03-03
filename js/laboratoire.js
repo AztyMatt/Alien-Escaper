@@ -1,49 +1,48 @@
+console.log(laboratory_done);
+// Corrigez pbs qui sont deja collectés pas alors que laboratory_done est undefined
+
 var collected = 0;
-console.log(collected)
 var next = document.getElementById("next");
-console.log(next)
 
-var bleach = document.getElementById("bleach");
-var bleach_collectible = document.getElementById("bleach_collectible");
-bleach.onclick = function(e) {
-    bleach.style.opacity=0
-    bleach.style.display="none"
-    bleach_collectible.style.opacity=1
-    bleach_collectible.style.filter="none"
-    collected ++
-    console.log(collected)
-    finish()
+var laboratory_done = localStorage.getItem('laboratory_done');
+if (laboratory_done = true){
+    $('area').on('click', function() {
+        console.log("Traducteur");
+    });
 }
 
-var lighter = document.getElementById("lighter");
-var lighter_collectible = document.getElementById("lighter_collectible");
-lighter.onclick = function(e) {
-    lighter.style.opacity=0
-    lighter.style.display="none"
-    lighter_collectible.style.opacity=1
-    lighter_collectible.style.filter="none"
-    collected ++
-    console.log(collected)
-    finish()
-}
+function objects(object, object_collectible){
+    console.log("je marche");
+    function appears() {
+        object.style.opacity=0;
+        object.style.display="none";
+        object_collectible.style.opacity=1;
+        object_collectible.style.filter="none";
+    }
 
-var tank = document.getElementById("tank");
-var tank_collectible = document.getElementById("tank_collectible");
-tank.onclick = function(e) {
-    tank.style.opacity=0
-    tank.style.display="none"
-    tank_collectible.style.opacity=1
-    tank_collectible.style.filter="none"
-    collected ++
-    console.log(collected)
-    finish()
+    if (laboratory_done = true){ //rajouter au if du dessus si possible
+        appears();
+    }else{
+        object.onclick = function(e) {
+            appears();
+            collected ++;
+            console.log(collected);
+            finish();
+        }
+    }
 }
 
 function finish(){
     if(collected == 3){
+        var laboratory_done = new Boolean(true);
+        localStorage.setItem('laboratory_done', laboratory_done);
+        console.log(localStorage.getItem('laboratory_done'));
+
         TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 2})
         TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 3})
     }
 }
 
-//A réduire si possible
+objects(bleach, bleach_collectible);
+objects(lighter, lighter_collectible);
+objects(tank, tank_collectible);

@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
     TL
     .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
     .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
-    .from(".collectibles div", {autoAlpha:0, duration:1, stagger:1, ease:"linear"})
+    .from(".collectibles >div", {autoAlpha:0, duration:1, stagger:1, ease:"linear"})
         TL.play();
     }
 

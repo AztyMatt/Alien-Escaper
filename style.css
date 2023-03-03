@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 #accueil {
   width: 100%;
   height: 100%;
@@ -134,15 +135,20 @@
   display: flex;
   flex-direction: row;
 }
-#laboratoire .collectibles div {
+#laboratoire .collectibles > div:not(:last-child) {
+  margin-right: 10px;
+}
+#laboratoire .collectibles > div p {
+  color: white;
+  text-align: center;
+}
+#laboratoire .collectibles > div > div {
   background-color: #204987;
   border: 5px solid #fcc801;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
-#laboratoire .collectibles div:not(:last-child) {
-  margin-right: 10px;
-}
-#laboratoire .collectibles div img {
+#laboratoire .collectibles > div > div img {
   width: 75px;
   filter: grayscale(1);
   opacity: 0;
@@ -325,4 +331,8 @@ body main {
 
 area {
   cursor: pointer;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
 }/*# sourceMappingURL=style.css.map */

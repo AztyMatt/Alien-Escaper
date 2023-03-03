@@ -45,20 +45,29 @@
         display: flex;
         flex-direction: row;
     
-        div{
-            background-color: #204987;
-            border: 5px solid #fcc801;
-            border-radius: 50%;
+        >div{
 
             &:not(:last-child){
                 margin-right: 10px;
             }
 
-            img{
-                width: 75px;
-                filter: grayscale(1);
-                opacity: 0;
-                transition: 1s;
+            p{
+                color: white;
+                text-align: center;
+            }
+
+            >div{
+                background-color: #204987;
+                border: 5px solid #fcc801;
+                border-radius: 50%;
+                margin-bottom: 10px;
+    
+                img{
+                    width: 75px;
+                    filter: grayscale(1);
+                    opacity: 0;
+                    transition: 1s;
+                }
             }
         }
     }

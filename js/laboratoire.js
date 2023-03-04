@@ -1,10 +1,10 @@
+var laboratory_done = localStorage.getItem('laboratory_done');
 console.log(laboratory_done);
 // Corrigez pbs qui sont deja collectés pas alors que laboratory_done est undefined
 
 var collected = 0;
 var next = document.getElementById("next");
 
-var laboratory_done = localStorage.getItem('laboratory_done');
 if (laboratory_done = true){
     $('area').on('click', function() {
         console.log("Traducteur");
@@ -21,8 +21,10 @@ function objects(object, object_collectible){
     }
 
     if (laboratory_done = true){ //rajouter au if du dessus si possible
+        console.log("apparaisse fini");
         appears();
     }else{
+        console.log("apparaisse pas fini");
         object.onclick = function(e) {
             appears();
             collected ++;

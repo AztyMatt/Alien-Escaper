@@ -2,6 +2,8 @@
 
 .container {
     pointer-events: inherit;
+    background-color: #23233a;
+    border-radius: 200px;
 }
 
 .row {
@@ -17,37 +19,33 @@
 #green {
     background-color: green;
     border-radius: 200px 0 0 0;
-}
-
-.green-click {
-    background-color: rgb(150, 255, 150) !important;
+    cursor: pointer;
 }
 
 #red {
     background-color: red;
     border-radius: 0 200px 0 0;
-}
-
-.red-click {
-    background-color: rgb(255, 150, 150) !important;
+    cursor: pointer;
 }
 
 #yellow {
     background-color: yellow;
     border-radius: 0 0 0 200px;
-}
-
-.yellow-click {
-    background-color: rgb(255, 255, 150) !important;
+    cursor: pointer;
 }
 
 #blue {
     background-color: blue;
     border-radius: 0 0 200px 0;
+    cursor: pointer;
 }
 
-.blue-click {
-    background-color: rgb(150, 150, 255) !important;
+.click{
+    opacity: 0.25;
+}
+
+.lock{
+    pointer-events: none;
 }
 
 .simon_container{

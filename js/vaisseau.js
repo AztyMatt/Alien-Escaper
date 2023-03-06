@@ -13,7 +13,11 @@ input.addEventListener('input', (e)=>{
 
             console.log(inputValue);
             if(inputValue=="ok"){
-                play();
+                input.value = "";
+                instructions.innerHTML = 'Démarrage en cours...';
+                setTimeout(() => {
+                    play();
+                }, 1000);
             }
         });
     }

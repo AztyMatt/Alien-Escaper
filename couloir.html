@@ -12,6 +12,9 @@
     </head>
     <body>
         <main id="couloir">
+            <div class="timer_container">
+                <p id="timer"></p>
+            </div>
             <div id="next" class="flex-full-center next">
                 <div>
                     <button class="commands" onclick="location.href='vaisseau.html'">Prochaine salle</button>
@@ -19,32 +22,54 @@
             </div>
             <div class="discussion">
                 <img src="medias/couloir/alien.png" alt="Alien qui vous parle">
-                <div>
+                <div class="flex-full-center">
                     <div class="message">
-                        <p>
-                            Clique sur mon mot ! <br>
-                            <br>
-                            Mon premier est utile pour ce reposer.<br>
-                            On souffle dans mon deuxième pour la chasse.<br>
-                            Mon troisième ce fait avec des lacets.<br>
-                            <br>
-                            Mon tout est animal féérique.<br>
-                        </p>
+                        <div>
+                            <div>
+                                <h2>Charade :</h2>
+                                <p id="to_translate">
+                                    Clique sur mon mot ! <br>
+                                    <br>
+                                    Mon premier est utile pour ce reposer.<br>
+                                    On souffle dans mon deuxième pour la chasse.<br>
+                                    Mon troisième ce fait avec des lacets.<br>
+                                    <br>
+                                    Mon tout est animal féérique.<br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="exit">
+                            <button id="idk" class="commands">Je ne comprends pas</button>
+                            <button id="ik" class="commands">Je pense avoir trouvé !</button>
+                        </div>
                     </div>
-                    <div id="exit">
-                        <button class="commands">Je pense avoir trouvé !</button>
+                </div>
+            </div>
+            <div id="need_translator" class="pop-up">
+                <div class="message">
+                    <div>
+                        <div>
+                            <h2>Paroles de l'Alien :</h2>
+                            <p>
+                                Malheureusement, bien que celui-ci semble vouloir m'aider, je n'ai rien compris de ce qu'il a dit ! <br>
+                                Cependant, l'équipe m'avait donné un exemplaire du prototype de traducteur Traado, qui a la faculté de pouvoir traduire n'importe quel langue ! Je ferais mieux de retourner au laboratoire pour aller le chercher, et comprendre ce que cet alien essaie de me dire !
+                            </p>
+                        </div>
+                    </div>
+                    <div class="exit">
+                        <button class="commands" onclick="location.href='laboratoire.html'">Y retourner !</button>
                     </div>
                 </div>
             </div>
             <div class="scene_wrapper">
                 <div class="scene">
                     <img src="medias/couloir/background.png" class="background-scene" alt="Le couloir" usemap="#alien">
-                    <img src="medias/couloir/object/licorn.png" class="licorn" alt="La licorne">
+                    <img src="medias/couloir/object/licorn.png" id="licorn" alt="La licorne">
                     <img src="medias/couloir/furniture.png" class="scenery" alt="Le couloir">
                     <!-- img src="medias/couloir/plants.gif" class="scenery" alt="Les plantes" -->
-                    <img src="medias/couloir/alarm.png" id="alarm" class="scenery" alt="Le couloir">
+                    <img src="medias/couloir/alarm.png" class="scenery alarm" alt="L'alarme">
                     <map name="alien">
-                        <area alt="Alien souffrant" title="À l'aide..." coords="974,654,990,658,1005,646,1015,622,1029,592,1020,571,1005,558,986,554,980,534,940,534,942,509,976,509,996,517,1010,532,1025,539,1030,558,1039,570,1044,515,1056,485,1083,466,1098,448,1108,429,1127,422,1117,439,1105,461,1130,475,1137,458,1122,453,1144,449,1151,466,1139,487,1137,509,1122,527,1085,559,1076,587,1100,595,1120,605,1122,632,1134,658,1139,676,1120,673,1107,629,1105,614,1071,600,1064,626,1078,644,1085,663,1076,687,1069,702,1066,658,1056,634,1056,598,1044,621,1034,644,1012,660,985,675,969,668" shape="poly">
+                        <area alt="Alien souffrant" title="À l'aide..." coords="876,594,893,591,908,578,925,533,911,507,890,499,879,478,846,479,844,459,884,456,913,481,920,482,930,510,939,510,939,473,945,444,968,423,983,417,992,397,1006,377,1015,380,1001,392,995,411,1006,421,1015,429,1024,411,1012,406,1032,405,1035,423,1023,438,1023,456,1010,479,971,510,971,527,983,530,1001,534,1006,550,1012,571,1024,586,1027,598,1010,607,1001,588,998,560,981,550,965,537,959,568,968,580,974,595,974,612,962,632,957,598,957,580,946,563,949,536,936,556,931,571,920,586,905,600,884,607" shape="poly">
                     </map>
                 </div>
             </div>
@@ -53,11 +78,12 @@
             </div>
         </main>
     </body>
+    <script type="text/javascript" src="js/timer.js"></script>
+    <script type="text/javascript" src="js/alarm.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/jquery.rwdImageMaps.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script type="text/javascript" src="js/animation.js"></script>
-
-    <script type="text/javascript" src="js/couloir.js"></script>
 </html>

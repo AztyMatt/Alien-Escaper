@@ -1,0 +1,172 @@
+
+
+.container {
+    pointer-events: inherit;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.color-btn {
+    height: 120px;
+    width: 120px;
+}
+
+#green {
+    background-color: green;
+    border-radius: 200px 0 0 0;
+}
+
+.green-click {
+    background-color: rgb(150, 255, 150) !important;
+}
+
+#red {
+    background-color: red;
+    border-radius: 0 200px 0 0;
+}
+
+.red-click {
+    background-color: rgb(255, 150, 150) !important;
+}
+
+#yellow {
+    background-color: yellow;
+    border-radius: 0 0 0 200px;
+}
+
+.yellow-click {
+    background-color: rgb(255, 255, 150) !important;
+}
+
+#blue {
+    background-color: blue;
+    border-radius: 0 0 200px 0;
+}
+
+.blue-click {
+    background-color: rgb(150, 150, 255) !important;
+}
+
+.simon_container{
+    /*visibility: hidden;*/
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+
+    >div{
+        position: absolute;
+        background-color: #4a4e69;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        height: 355px;
+        width: 1400px;
+        display: flex;
+    }
+
+    .dots{
+        height: 100%;
+        width: 17.5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style: none;
+        
+            li{
+                background-color: #988a97;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        
+            &:nth-child(2n+1){
+        
+                li{
+                    background-color: #23233a;
+                }
+            }
+        }
+    }
+    
+    .screen_wrapper{
+        height: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+        div, input{
+            background-color: black;
+            width: 100%;
+            color: white;
+            padding: 20px;
+        }
+    
+        .screen{
+            height: 230px;
+        }
+    
+        #bar{
+            height: 40px;
+            border: none;
+            font-family: "VT323", monospace;
+            font-size: 25px;
+
+            &:focus, &:focus-visible{
+                outline: none;
+            }
+        }
+    }
+
+    .simon_wrapper{
+        height: 100%;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .top{
+            height: 250px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .bars{
+                width: 200px;
+                height: 100px;
+
+                ul{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    list-style: none;
+
+                    li{
+                        width: 100%;
+                        height: 10px;
+                        background-color: #988a97;
+                    }
+                }
+            }
+        }
+
+        .bottom{
+            width: 235px;
+            display: flex;
+            justify-content: end;
+        }
+    }
+}

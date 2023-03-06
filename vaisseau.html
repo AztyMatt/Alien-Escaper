@@ -10,9 +10,84 @@
 
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     </head>
     <body>
         <main id="vaisseau">
+            <div class="simon_container flex-full-center">
+                <div>
+                    <div class="dots">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="screen_wrapper">
+                        <div class="screen">
+                            <p id="instructions">Veuiller entrer "abandon ship" pour activer l'autodestruction de votre vaisseau.</p>
+                        </div>
+                        <input id="bar"></input>
+                    </div>
+                    <div class="simon_wrapper">
+                        <div class="top">
+                            <div class="bars">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div id="simon">
+                                <div class="container">
+                                    <div class="row">
+                                        <div id="green" class="color-btn"></div>
+                                        <div id="red" class="color-btn"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="yellow" class="color-btn"></div>
+                                        <div id="blue" class="color-btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom dots">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="scene_wrapper">
                 <div class="scene">
                     <img src="medias/vaisseau/vaisseau.png" class="background-scene" alt="Le vaisseau" usemap="#simon"/>
@@ -31,4 +106,7 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script type="text/javascript" src="js/animation.js"></script>
+
+    <script type="text/javascript" src="js/simon.js"></script>
+    <script type="text/javascript" src="js/vaisseau.js"></script>
 </html>

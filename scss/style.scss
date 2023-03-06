@@ -2,18 +2,29 @@
 @import 'intro';
 @import 'laboratoire';
 @import 'couloir';
+@import 'vaisseau';
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url(//db.onlinewebfonts.com/c/9a9ee05fac2f147530775797682ce685?family=Glipervelz);
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 body{
     background-color: black;
     height: 100vh;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
 
     main{
         width: 100%;
@@ -52,7 +63,7 @@ body{
         width: 90%;
         height: auto;
 
-        .background-scene{
+        #background-scene{
             width: 100%;
         }
     
@@ -100,13 +111,17 @@ body{
     height: 100vh !important;
 }
 
+
+
+
+
+
 .commands{
     visibility: hidden;
     cursor: pointer;
     transform: scale(1);
     padding: 10px 20px;
     border: none;
-    width: 300px;
     border-radius: 5px;
     background-color: #204987;
     color: #fcc801;
@@ -120,10 +135,94 @@ body{
     }
 }
 
-area{
-    cursor: pointer;
+.pop-up{
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 9;
 }
 
-p{
-    font-family: 'Roboto', sans-serif;
+.message{
+    background-color: #204987;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 850px;
+    margin: 50px;
+
+    >div:nth-child(1){
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        padding: 20px;
+        width: 100%;
+
+        h2{
+            margin-bottom: 20px;
+        }
+    }
+
+    img{
+        height: 350px;
+        margin-left: 50px;
+    }
+
+    button{
+        font-size: 20px;
+        border: 2.5px solid #fcc801;
+    }
+}
+
+.exit{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.alarm{
+    opacity: 0;
+    transition: 1s;
+}
+
+.active{
+    opacity: 100 !important;
+}
+
+.timer_container{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    background-color: #204987;
+    color: #fcc801;
+    margin: 20px;
+    border-radius: 5px;
+    z-index: 20;
+
+    #timer{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+    }
+}
+
+area{
+    cursor: pointer;
 }

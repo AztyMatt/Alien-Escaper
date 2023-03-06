@@ -19,7 +19,6 @@ body {
 #green {
     background-color: green;
     border-radius: 200px 0 0 0;
-    margin: 0 10px 10px 0;
 }
 
 .green-click {
@@ -29,7 +28,6 @@ body {
 #red {
     background-color: red;
     border-radius: 0 200px 0 0;
-    margin: 0 0 10px 10px;
 }
 
 .red-click {
@@ -39,7 +37,6 @@ body {
 #yellow {
     background-color: yellow;
     border-radius: 0 0 0 200px;
-    margin: 10px 10px 0 0;
 }
 
 .yellow-click {
@@ -49,7 +46,6 @@ body {
 #blue {
     background-color: blue;
     border-radius: 0 0 200px 0;
-    margin: 10px 0 0 10px;
 }
 
 .blue-click {

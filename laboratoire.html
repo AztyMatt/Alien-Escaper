@@ -13,14 +13,38 @@
     </head>
     <body>
         <main id="laboratoire">
+            <div class="timer_container">
+                <p id="timer"></p>
+            </div>
             <div id="next" class="flex-full-center next">
                 <div>
                     <button class="commands" onclick="location.href='couloir.html'">Prochaine salle</button>
                 </div>
             </div>
+            <div id="diapo" class="flex-full-center">
+                <img id="diapo_1" src="medias/laboratoire/explosion/diapo_1.jpg" alt="Préparation des composants pour l'explosion">
+                <img id="diapo_2"src="medias/laboratoire/explosion/diapo_2.jpg" alt="Explosion de la porte">
+            </div>
+            <div id="translator" class="pop-up">
+                <div class="message">
+                    <div>
+                        <div>
+                            <h2>Traducteur Traado :</h2>
+                            <p>
+                                Voici le traducteur Traado, c’est un outil puissant et précis qui vous permet de comprendre et de communiquer avec des extraterrestres de manière facile et efficace.<br><br>
+                                Le traducteur utilise des algorithmes sophistiqués pour analyser les modèles de langage alien et les traduire instantanément en français. Que vous soyez un scientifique, un explorateur ou simplement un curieux, notre traducteur vous permettra de découvrir de nouvelles cultures et de nouvelles formes de vie.
+                            </p>
+                        </div>
+                        <img src="medias/laboratoire/translator.png" alt="Le traducteur Traado">
+                    </div>
+                    <div class="exit">
+                        <button class="commands" onclick="get_translator()">Récuperer</button>
+                    </div>
+                </div>
+            </div>
             <div class="scene_wrapper">
                 <div class="scene">
-                    <img src="medias/laboratoire/background.png" class="background-scene" alt="Le laboratoire" usemap="#coat_hanger"/>
+                    <img src="medias/laboratoire/background.png" id="background-scene" alt="Le laboratoire" usemap="#coat_hanger"/>
                     <img src="medias/laboratoire/objects/bleach.png" id="bleach" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/landing_net.png" id="landing_net" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/lighter.png" id="lighter" class="object" alt="Le laboratoire"/>
@@ -29,6 +53,7 @@
                     <img src="medias/laboratoire/furniture.png" class="scenery" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/tank.png" id="tank" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/coat_hanger.png" class="scenery" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/alarm.png" class="scenery alarm" alt="L'alarme">
                     <map name="coat_hanger">
                         <area alt="Porte-combinaison" title="Il y a peut-être quelque chose ici...." coords="946,533,955,464,946,461,950,444,959,412,949,412,956,400,958,351,946,342,962,345,970,336,976,354,1085,407,1094,403,1100,404,1103,417,1133,435,1133,439,1100,423,1126,560,1049,600,993,562" shape="poly">
                     </map>    
@@ -59,6 +84,9 @@
             </div>
         </main>
     </body>
+    <script type="text/javascript" src="js/timer.js"></script>
+    <script type="text/javascript" src="js/alarm.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/jquery.rwdImageMaps.min.js"></script>
 

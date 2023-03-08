@@ -144,6 +144,16 @@ window.addEventListener('load', () => {
         .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
             TL.play();
         }
+
+        $('area').on('click', function() {
+            const TL = gsap.timeline({paused: true});
+
+            TL
+            .from(".simon_container", {autoAlpha:0, duration:1, ease:"linear"})
+                TL.play();
+
+            event.preventDefault();
+        });
 });
 
     

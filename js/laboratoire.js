@@ -13,12 +13,12 @@ function finish(){
         localStorage.setItem('_is_laboratory_done', _is_laboratory_done);
         console.log(localStorage.getItem('_is_laboratory_done'));
 
-        TweenMax.to("#diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
+        TweenMax.to(".diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
         setTimeout(
             function() {
                 audio.play();
             }, 4000);
-        TweenMax.to("#diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 4})
+        TweenMax.to(".diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 4})
         TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 6})
         TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 7})
     }

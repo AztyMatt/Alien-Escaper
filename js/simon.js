@@ -1,5 +1,5 @@
-// CONSTANTS AND VARIABLES
 
+// CONSTANTS AND VARIABLES
 const colors = ['green', 'red', 'yellow', 'blue'];
 let playing = false;
 let level = 0;
@@ -41,23 +41,52 @@ const animateSequence = (idx => {
 });
 
 const nextSequence = (() => {
-    if(level==6){
-        alert('Gagné! Tu as finis le jeu félicitation !');
-    }
-
     let iteration=1
-    if(pattern.length === 0){
-        iteration=4
-    }
-    for (var i = 0; i < iteration; i++) {
-        let idx = Math.floor(Math.random() * 4);                                         console.log("idx : "+idx);
-        let newColor = colors[idx];                                                      console.log("colors : "+colors);
-        pattern.push(newColor);
-        ++level;                                                                         console.log("level : "+level);
-        console.log(iteration)
-        if(iteration !== 4){
-            instructions.innerHTML = 'Bien joué, niveau suivant !';
+    console.log(level)
+    if (level > 5){
+        console.log("stop bg")
+        container.addClass("lock");
+        instructions.innerHTML = "Activation du protocole d'auto-destruction...";
+        setTimeout(() => {
+            var seconds = 10
+            interval = setInterval(function () {
+                instructions.innerHTML = seconds;
+                if (--seconds < 0){
+                    instructions.innerHTML = "Autodestruction !";
+                    TweenMax.set([".simon_container"], {clearProps: 'all'});
+                    TweenMax.set([".scene_wrapper"], {clearProps: 'all'});
+                    TweenMax.to(".diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 0})
+                    setTimeout(
+                        function() {
+                            audio.play();
+                        }, 4000);
+                    TweenMax.to(".diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 2})
+                
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }, 2000);
+    }else{
+        if(pattern.length === 0){
+            iteration=4
         }
+        for (var i = 0; i < iteration; i++) {
+            let idx = Math.floor(Math.random() * 4);                                         console.log("idx : "+idx);
+            let newColor = colors[idx];                                                      console.log("colors : "+colors);
+            pattern.push(newColor);
+            ++level;                                                                         console.log("level : "+level);
+            console.log(iteration)
+            if(iteration !== 4){
+                instructions.innerHTML = 'Bien joué, niveau suivant !';
+            }
+        }
+
+        container.addClass("lock");
+        animateSequence(0);
+        setTimeout(() => {
+            console.log(pattern.length)
+            container.removeClass("lock");
+        }, (pattern.length * 1000) + 1000);
     }
 });
 
@@ -78,14 +107,8 @@ $('.color-btn').click(e => {
         animateClick(color, clickClass);
         checkSequence(color);
         if(++clicks === level) {
-            console.log("LALALALALALLAA")
             clicks = 0;
             nextSequence();
-            container.addClass("lock");
-            animateSequence(0);
-            setTimeout(() => {
-                container.removeClass("lock");
-            }, (pattern.length * 1000) + 1000);
         }
     }
 });
@@ -95,7 +118,6 @@ function play(){
         clicks = 0;
         nextSequence();
         container.addClass("lock");
-        animateSequence(0);
         setTimeout(() => {
             container.removeClass("lock");
         }, (pattern.length * 1000) + 1000);

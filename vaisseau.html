@@ -14,9 +14,14 @@
     </head>
     <body>
         <main id="vaisseau">
+            <div class="flex-full-center next">
+                <div>
+                    <button id="next_button" class="commands" onclick="location.href='end.html'">Générique</button>
+                </div>
+            </div>
             <div class="diapo" class="flex-full-center">
-                <img class="diapo_1" src="medias/vaisseau/explosion/diapo_1.png" alt="Préparation des composants pour l'explosion">
-                <img class="diapo_2"src="medias/vaisseau/explosion/diapo_2.png" alt="Explosion de la porte">
+                <img id="diapo_1" src="medias/vaisseau/explosion/diapo_1.png" alt="Vaisseau dans l'espace">
+                <img id="diapo_2"src="medias/vaisseau/explosion/diapo_2.png" alt="Explosion du vaisseau">
             </div>
             <div class="simon_container flex-full-center">
                 <div>
@@ -94,7 +99,7 @@
             </div>
             <div class="scene_wrapper">
                 <div class="scene">
-                    <img src="medias/vaisseau/vaisseau.png" class="background-scene" alt="Le vaisseau" usemap="#simon"/>
+                    <img src="medias/vaisseau/vaisseau.png" id="background-scene" alt="Le vaisseau" usemap="#simon"/>
                     <map name="simon">
                         <area alt="simon" title="Clic ici !" coords="1352,479,1357,462,1367,453,1384,443,1402,443,1415,451,1425,466,1428,483,1421,497,1399,506,1378,504,1361,494" shape="poly">
                     </map>
@@ -105,6 +110,8 @@
             </div>
         </main>
     </body>
+    <script type="text/javascript" src="js/ambiance.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/jquery.rwdImageMaps.min.js"></script>
 

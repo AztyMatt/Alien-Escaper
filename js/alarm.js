@@ -1,5 +1,5 @@
 function alarm(){
-    var alarm = new Audio('../medias/alarm.mp3');
+    var alarm = new Audio('../medias/sound/alarm.mp3');
 
     setInterval(function(){
         $(".alarm").toggleClass("active");

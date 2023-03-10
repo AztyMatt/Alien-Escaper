@@ -7,6 +7,9 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url(//db.onlinewebfonts.com/c/9a9ee05fac2f147530775797682ce685?family=Glipervelz);
 
+
+
+//------------------Common change------------------//
 *{
     margin: 0;
     padding: 0;
@@ -32,61 +35,13 @@ body{
     }
 }
 
-.background{
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    video{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block
-    }
+area{
+    cursor: pointer;
 }
 
-.scene_wrapper{
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    visibility: hidden;
 
-    .scene{
-        position: relative;
-        width: 90%;
-        height: auto;
 
-        #background-scene{
-            width: 100%;
-        }
-    
-        .scenery{
-            position: absolute;
-            width: 100%;
-            top: 0;
-            right: 0;
-            margin: auto;
-            pointer-events: none
-        }
-    }
-}
-
-.next{
-    position: absolute;
-    opacity: 0;
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(2px);
-    z-index: 10;
-    pointer-events: none
-}
-
+//------------------Common classes------------------//
 .flex-center{
     width: 100%;
     height: 100%;
@@ -111,27 +66,6 @@ body{
     height: 100vh !important;
 }
 
-
-
-.diapo{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 8;
-    pointer-events: none;
-
-    img{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-    }
-}
-
-
 .commands{
     visibility: hidden;
     cursor: pointer;
@@ -148,6 +82,72 @@ body{
 
     &:hover{
         transform: scale(1.1);
+    }
+}
+
+.alarm{
+    opacity: 0;
+    transition: 1s;
+}
+
+#ambiance{
+    display: none;
+}
+
+.active{
+    opacity: 100 !important;
+}
+
+
+
+//------------------Common setup------------------//
+.timer_container{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    background-color: #204987;
+    color: #fcc801;
+    margin: 20px;
+    border-radius: 5px;
+    z-index: 30;
+
+    #timer{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+    }
+}
+
+.next{
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 27;
+    pointer-events: none;
+}
+
+.diapo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 25;
+    pointer-events: none;
+
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
     }
 }
 
@@ -208,38 +208,48 @@ body{
     justify-content: end;
 }
 
-.alarm{
-    opacity: 0;
-    transition: 1s;
-}
-
-.active{
-    opacity: 100 !important;
-}
-
-.timer_container{
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
+.scene_wrapper{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 100px;
-    background-color: #204987;
-    color: #fcc801;
-    margin: 20px;
-    border-radius: 5px;
-    z-index: 20;
+    overflow: hidden;
+    visibility: hidden;
 
-    #timer{
-        text-align: center;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 30px;
+    .scene{
+        position: relative;
+        width: 90%;
+        height: auto;
+
+        #background-scene{
+            width: 100%;
+        }
+    
+        .scenery{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            right: 0;
+            margin: auto;
+            pointer-events: none
+        }
     }
 }
 
-area{
-    cursor: pointer;
+.background{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block
+    }
 }

@@ -13,7 +13,6 @@
 }
 #accueil #menu > div {
   width: 400px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -43,6 +42,8 @@
   height: 100%;
   border-radius: 5px;
   background-color: #071b43;
+  display: flex;
+  flex-direction: row;
 }
 #intro .carrousel .carrousel-container .image {
   visibility: hidden;
@@ -54,12 +55,6 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
-#intro .carrousel .carrousel-container .end {
-  position: relative;
-}
-#intro .carrousel .carrousel-container .end > div > div {
-  position: absolute;
 }
 #intro .carrousel .carrousel-btn {
   top: 0;
@@ -76,10 +71,10 @@
   cursor: pointer;
   margin: 0;
   padding: 0;
+  z-index: 20;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 #intro .carrousel .carrousel-btn > p > span {
   font-size: 60px !important;
@@ -107,16 +102,17 @@
 }
 #laboratoire .scene #lighter {
   left: 25.5%;
-  top: 50.5%;
+  top: 49.5%;
   width: 3%;
 }
-#laboratoire .scene #bleach {
+#laboratoire .scene #pool_product {
   left: 41.75%;
   top: 32.5%;
 }
-#laboratoire .scene #tank {
-  left: 51.5%;
-  top: 43.5%;
+#laboratoire .scene #hairspray {
+  left: 52.5%;
+  top: 44.5%;
+  width: 3.5%;
 }
 #laboratoire .scene #landing_net {
   left: 62.5%;
@@ -158,27 +154,7 @@
   transition: 1s;
 }
 
-img[usemap] {
-  border: none;
-  height: auto;
-  max-width: 100%;
-}
-
-#licorn {
-  pointer-events: none;
-  position: absolute;
-  width: 3.5%;
-  top: 68%;
-  left: 20%;
-}
-
-#plants {
-  width: 15%;
-  top: 37.5%;
-  right: 15%;
-}
-
-.discussion {
+#couloir .discussion {
   visibility: hidden;
   position: absolute;
   width: 100%;
@@ -192,61 +168,30 @@ img[usemap] {
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
-.discussion img {
+#couloir .discussion img {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-
-.container {
-  pointer-events: inherit;
-  background-color: #23233a;
-  border-radius: 200px;
+#couloir #need_translator img[usemap] {
+  border: none;
+  height: auto;
+  max-width: 100%;
 }
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-.color-btn {
-  height: 120px;
-  width: 120px;
-}
-
-#green {
-  background-color: green;
-  border-radius: 200px 0 0 0;
-  cursor: pointer;
-}
-
-#red {
-  background-color: red;
-  border-radius: 0 200px 0 0;
-  cursor: pointer;
-}
-
-#yellow {
-  background-color: yellow;
-  border-radius: 0 0 0 200px;
-  cursor: pointer;
-}
-
-#blue {
-  background-color: blue;
-  border-radius: 0 0 200px 0;
-  cursor: pointer;
-}
-
-.click {
-  opacity: 0.25;
-}
-
-.lock {
+#couloir .scene_wrapper #licorn {
   pointer-events: none;
+  position: absolute;
+  width: 3.5%;
+  top: 68%;
+  left: 20%;
+}
+#couloir .scene_wrapper #plants {
+  width: 15%;
+  top: 37.5%;
+  right: 15%;
 }
 
-.simon_container {
+#vaisseau .simon_container {
   visibility: hidden;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
@@ -254,7 +199,7 @@ img[usemap] {
   backdrop-filter: blur(2px);
   z-index: 10;
 }
-.simon_container > div {
+#vaisseau .simon_container > div {
   position: absolute;
   background-color: #4a4e69;
   display: flex;
@@ -264,72 +209,72 @@ img[usemap] {
   width: 1400px;
   display: flex;
 }
-.simon_container .dots {
+#vaisseau .simon_container .dots {
   height: 100%;
   width: 17.5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.simon_container .dots ul {
+#vaisseau .simon_container .dots ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
 }
-.simon_container .dots ul li {
+#vaisseau .simon_container .dots ul li {
   background-color: #988a97;
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.simon_container .dots ul:nth-child(2n+1) li {
+#vaisseau .simon_container .dots ul:nth-child(2n+1) li {
   background-color: #23233a;
 }
-.simon_container .screen_wrapper {
+#vaisseau .simon_container .screen_wrapper {
   height: 100%;
   width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.simon_container .screen_wrapper div, .simon_container .screen_wrapper input {
+#vaisseau .simon_container .screen_wrapper div, #vaisseau .simon_container .screen_wrapper input {
   background-color: black;
   width: 100%;
   color: white;
   padding: 20px;
 }
-.simon_container .screen_wrapper .screen {
+#vaisseau .simon_container .screen_wrapper .screen {
   height: 230px;
 }
-.simon_container .screen_wrapper #bar {
+#vaisseau .simon_container .screen_wrapper #bar {
   height: 40px;
   border: none;
   font-family: "VT323", monospace;
   font-size: 25px;
 }
-.simon_container .screen_wrapper #bar:focus, .simon_container .screen_wrapper #bar:focus-visible {
+#vaisseau .simon_container .screen_wrapper #bar:focus, #vaisseau .simon_container .screen_wrapper #bar:focus-visible {
   outline: none;
 }
-.simon_container .simon_wrapper {
+#vaisseau .simon_container .simon_wrapper {
   height: 100%;
   width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.simon_container .simon_wrapper .top {
+#vaisseau .simon_container .simon_wrapper .top {
   height: 250px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.simon_container .simon_wrapper .top .bars {
+#vaisseau .simon_container .simon_wrapper .top .bars {
   width: 200px;
   height: 100px;
 }
-.simon_container .simon_wrapper .top .bars ul {
+#vaisseau .simon_container .simon_wrapper .top .bars ul {
   width: 100%;
   height: 100%;
   display: flex;
@@ -337,12 +282,51 @@ img[usemap] {
   justify-content: space-between;
   list-style: none;
 }
-.simon_container .simon_wrapper .top .bars ul li {
+#vaisseau .simon_container .simon_wrapper .top .bars ul li {
   width: 100%;
   height: 10px;
   background-color: #988a97;
 }
-.simon_container .simon_wrapper .bottom {
+#vaisseau .simon_container .simon_wrapper .top #simon .click {
+  opacity: 0.25;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .lock {
+  pointer-events: none !important;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container {
+  pointer-events: inherit;
+  background-color: #23233a;
+  border-radius: 200px;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container .row {
+  display: flex;
+  justify-content: center;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container .row #green {
+  background-color: green;
+  border-radius: 200px 0 0 0;
+  cursor: pointer;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container .row #red {
+  background-color: red;
+  border-radius: 0 200px 0 0;
+  cursor: pointer;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container .row #yellow {
+  background-color: yellow;
+  border-radius: 0 0 0 200px;
+  cursor: pointer;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container .row #blue {
+  background-color: blue;
+  border-radius: 0 0 200px 0;
+  cursor: pointer;
+}
+#vaisseau .simon_container .simon_wrapper .top #simon .container .row .color-btn {
+  height: 120px;
+  width: 120px;
+}
+#vaisseau .simon_container .simon_wrapper .bottom {
   width: 235px;
   display: flex;
   justify-content: end;
@@ -354,8 +338,7 @@ img[usemap] {
   box-sizing: border-box;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
    supported by Chrome, Edge, Opera and Firefox */
 }
@@ -371,57 +354,8 @@ body main {
   height: 100%;
 }
 
-.background {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.background video {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-}
-
-.scene_wrapper {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  visibility: hidden;
-}
-.scene_wrapper .scene {
-  position: relative;
-  width: 90%;
-  height: auto;
-}
-.scene_wrapper .scene #background-scene {
-  width: 100%;
-}
-.scene_wrapper .scene .scenery {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-  margin: auto;
-  pointer-events: none;
-}
-
-.next {
-  position: absolute;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-  z-index: 10;
-  pointer-events: none;
+area {
+  cursor: pointer;
 }
 
 .flex-center {
@@ -448,24 +382,6 @@ body main {
   height: 100vh !important;
 }
 
-.diapo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 8;
-  pointer-events: none;
-}
-.diapo img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .commands {
   visibility: hidden;
   cursor: pointer;
@@ -482,6 +398,69 @@ body main {
 }
 .commands:hover {
   transform: scale(1.1);
+}
+
+.alarm {
+  opacity: 0;
+  transition: 1s;
+}
+
+#ambiance {
+  display: none;
+}
+
+.active {
+  opacity: 100 !important;
+}
+
+.timer_container {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  background-color: #204987;
+  color: #fcc801;
+  margin: 20px;
+  border-radius: 5px;
+  z-index: 30;
+}
+.timer_container #timer {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 30px;
+}
+
+.next {
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 27;
+  pointer-events: none;
+}
+
+.diapo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  pointer-events: none;
+}
+.diapo img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .pop-up {
@@ -538,37 +517,45 @@ body main {
   justify-content: end;
 }
 
-.alarm {
-  opacity: 0;
-  transition: 1s;
-}
-
-.active {
-  opacity: 100 !important;
-}
-
-.timer_container {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
+.scene_wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 100px;
-  background-color: #204987;
-  color: #fcc801;
-  margin: 20px;
-  border-radius: 5px;
-  z-index: 20;
+  overflow: hidden;
+  visibility: hidden;
 }
-.timer_container #timer {
-  text-align: center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 30px;
+.scene_wrapper .scene {
+  position: relative;
+  width: 90%;
+  height: auto;
+}
+.scene_wrapper .scene #background-scene {
+  width: 100%;
+}
+.scene_wrapper .scene .scenery {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  margin: auto;
+  pointer-events: none;
 }
 
-area {
-  cursor: pointer;
+.background {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.background video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }/*# sourceMappingURL=style.css.map */

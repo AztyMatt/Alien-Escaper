@@ -1,6 +1,6 @@
 function start(){
     //set les variables
-    let minutes = 5;
+    let minutes = 1;
     let currentTime = localStorage.getItem('currentTime');
     let targetTime = localStorage.getItem('targetTime');
     if (targetTime == null && currentTime == null){
@@ -31,12 +31,20 @@ window.onload = function() {
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
 
+        console.log(minutes)
+
         if (minutes == 00 && seconds == 00){
-            document.getElementById('timer').innerText = "BOUM EXPLOSION ARRRGHHHH *mort*";
+            document.getElementById('timer').innerText = "00:00";
+            TweenMax.to("#dead", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
+            setTimeout(() => {
+                    location.href="index.html";
+            }, 3000);
         }else if(minutes <= 5){
             minutes = prependZero(minutes);
             seconds = prependZero(seconds);
             document.getElementById('timer').innerText = minutes+":"+seconds;
+        }else if(minutes > 5){
+            location.href="index.html";
         }
     }
 };

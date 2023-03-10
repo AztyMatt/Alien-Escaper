@@ -1,27 +1,45 @@
+var intro = new Audio('../medias/sound/laboratoire/intro.mp3');
+var played = false;
 var _is_laboratory_done = localStorage.getItem('_is_laboratory_done');
 var _is_laboratory_done = new RegExp("true").test(_is_laboratory_done);
 console.log(_is_laboratory_done);
 
 var collected = 0;
-var next = document.getElementById("next");
 
 function finish(){
     if(collected == 3){
-        var audio = new Audio('../medias/laboratoire/explosion/explosion.mp3');
-        var _is_laboratory_done = true;
-        console.log(_is_laboratory_done);
-        localStorage.setItem('_is_laboratory_done', _is_laboratory_done);
-        console.log(localStorage.getItem('_is_laboratory_done'));
-
-        TweenMax.to(".diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
+        TweenMax.to("#diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
         setTimeout(
             function() {
-                audio.play();
+                var explosion = new Audio('../medias/sound/explosion.mp3');
+                explosion.play();
             }, 4000);
-        TweenMax.to(".diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 4})
+        TweenMax.to("#diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 4})
         TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 6})
         TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 7})
+        var next = document.getElementById("next_button");
+        next.onclick = function(e) {
+            var _is_laboratory_done = true;
+            console.log(_is_laboratory_done);
+            localStorage.setItem('_is_laboratory_done', _is_laboratory_done);
+            console.log(localStorage.getItem('_is_laboratory_done'));
+            location.href='couloir.html';
+        }
     }
+}
+
+if (_is_laboratory_done === true){
+    alarm();
+    document.getElementById("background-scene").src="../medias/laboratoire/background_after.png";
+}else{
+    addEventListener("mousemove", (event) => {
+        if (ambiance.duration > 0 && !ambiance.paused && played == false){
+            played = true;
+            intro.play();
+            intro.volume = 0.6;
+            console.log(played);
+        }
+    });
 }
 
 function objects(object, object_collectible){
@@ -34,10 +52,11 @@ function objects(object, object_collectible){
 
     if (_is_laboratory_done === true){ //rajouter au if du dessus si possible
         appears();
-        alarm();
-        document.getElementById("background-scene").src="../medias/laboratoire/background_after.png";
     }else{
         object.onclick = function(e) {
+            console.log(object.id)
+            var collect = new Audio('../medias/sound/laboratoire/'+object.id+'.mp3');
+            collect.play();
             appears();
             collected ++;
             console.log(collected);
@@ -46,9 +65,9 @@ function objects(object, object_collectible){
     }
 }
 
-objects(bleach, bleach_collectible);
+objects(pool_product, pool_product_collectible);
 objects(lighter, lighter_collectible);
-objects(tank, tank_collectible);
+objects(hairspray, hairspray_collectible);
 
 function get_translator(){
     localStorage.setItem('_is_translator_got', true);

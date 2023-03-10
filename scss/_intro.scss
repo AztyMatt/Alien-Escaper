@@ -15,6 +15,8 @@
             height: 100%;
             border-radius: 5px;
             background-color: #071b43;
+            display: flex;
+            flex-direction: row;
     
             .image {
                 visibility: hidden;
@@ -26,17 +28,6 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
-            }
-
-            .end{
-                position: relative;
-
-                >div{
-                    
-                    >div{
-                        position: absolute;
-                    }
-                }
             }
         }
     
@@ -55,6 +46,7 @@
                 cursor: pointer;
                 margin: 0;
                 padding: 0;
+                z-index: 20;
                 -webkit-user-select: none;
                    -moz-user-select: none;
                         user-select: none;

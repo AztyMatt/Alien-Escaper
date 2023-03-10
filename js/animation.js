@@ -25,16 +25,22 @@ window.addEventListener('load', () => {
         $("#right").click(function(){
             i += 1
             TweenMax.to(boxes[i], 3, {autoAlpha:1, ease:"power1", delay: 0.25});
-
-            if (i == 9) {
-                TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 2})
-                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 3})
-            }
+            is_end();
         })
 
         $("#left").click(function(){
             i -= 1
-        })     
+            is_end();
+        })
+
+        function is_end(){
+            if (i == 9) {
+                TweenMax.to(".next", 1.5, {autoAlpha:1,  pointerEvents:"inherit", ease:"linear", delay: 2})
+                TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 3})
+            }else{
+                TweenMax.set([".next", ".commands"], {clearProps: 'all'});
+            }
+        }
     }
 
     //Laboratoire
@@ -86,6 +92,23 @@ window.addEventListener('load', () => {
         .from(".timer_container", {autoAlpha:0, duration:1, ease:"linear"})
             TL.play();
 
+            var intro = new Audio('../medias/sound/couloir/intro.mp3');
+            var played = false;
+        
+        var _is_translator_got = localStorage.getItem('_is_translator_got');
+        var _is_translator_got = new RegExp("true").test(_is_translator_got);
+        console.log(_is_translator_got);
+        if (_is_translator_got !== true){
+            addEventListener("mousemove", (event) => {
+                if (ambiance.duration > 0 && !ambiance.paused && played == false){
+                    played = true;
+                    intro.play();
+                    intro.volume = 0.6;
+                    console.log(played);
+                }
+            });
+        }
+
         $('area').on('click', function() {
             var _is_translator_got = localStorage.getItem('_is_translator_got');
             var _is_translator_got = new RegExp("true").test(_is_translator_got);
@@ -108,6 +131,11 @@ window.addEventListener('load', () => {
                 TL
                 .from("#ik", {autoAlpha:0, duration:1, ease:"linear"})
                     TL.play();
+                
+                setTimeout(() => {
+                    var charade = new Audio('../medias/sound/couloir/charade.mp3');
+                    charade.play();
+                }, 3000);
             }
             event.preventDefault();
         });
@@ -117,6 +145,9 @@ window.addEventListener('load', () => {
             .from("#need_translator", {autoAlpha:0, duration:1, ease:"linear"})
             .from(".exit button", {autoAlpha:0, duration:1, ease:"linear"})
                 TL.play();
+
+            var idk = new Audio('../medias/sound/couloir/idk.mp3');
+            idk.play();
         });
 
         $('#ik').on('click', function() {
@@ -129,7 +160,7 @@ window.addEventListener('load', () => {
         });
 
         $('#licorn').on('click', function() {
-            TweenMax.to("#next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 1})
+            TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 1})
             TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 2})
             event.preventDefault();
         });

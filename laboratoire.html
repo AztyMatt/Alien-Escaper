@@ -16,14 +16,15 @@
             <div class="timer_container">
                 <p id="timer"></p>
             </div>
-            <div id="next" class="flex-full-center next">
+            <div class="flex-full-center next">
                 <div>
-                    <button class="commands" onclick="location.href='couloir.html'">Prochaine salle</button>
+                    <button id="next_button" class="commands">Prochaine salle</button>
                 </div>
             </div>
             <div class="diapo" class="flex-full-center">
-                <img class="diapo_1" src="medias/laboratoire/explosion/diapo_1.jpg" alt="Préparation des composants pour l'explosion">
-                <img class="diapo_2"src="medias/laboratoire/explosion/diapo_2.jpg" alt="Explosion de la porte">
+                <img id="diapo_1" src="medias/laboratoire/explosion/diapo_1.jpg" alt="Préparation des composants pour l'explosion">
+                <img id="diapo_2"src="medias/laboratoire/explosion/diapo_2.jpg" alt="Explosion de la porte">
+                <img id="dead" src="medias/dead.jpg" alt="Vous etes mort">
             </div>
             <div id="translator" class="pop-up">
                 <div class="message">
@@ -45,13 +46,13 @@
             <div class="scene_wrapper">
                 <div class="scene">
                     <img src="medias/laboratoire/background.png" id="background-scene" alt="Le laboratoire" usemap="#coat_hanger"/>
-                    <img src="medias/laboratoire/objects/bleach.png" id="bleach" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/pool_product.png" id="pool_product" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/landing_net.png" id="landing_net" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/lighter.png" id="lighter" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/objects/toilet_bowl.png" id="toilet_bowl" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/tanks.png" class="scenery" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/furniture.png" class="scenery" alt="Le laboratoire"/>
-                    <img src="medias/laboratoire/objects/tank.png" id="tank" class="object" alt="Le laboratoire"/>
+                    <img src="medias/laboratoire/objects/hairspray.png" id="hairspray" class="object" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/coat_hanger.png" class="scenery" alt="Le laboratoire"/>
                     <img src="medias/laboratoire/alarm.png" class="scenery alarm" alt="L'alarme">
                     <map name="coat_hanger">
@@ -61,7 +62,7 @@
                 <div class="collectibles">
                     <div>
                         <div>
-                            <img src="medias/laboratoire/objects/bleach.png" id="bleach_collectible" alt="Le laboratoire"/>
+                            <img src="medias/laboratoire/objects/pool_product.png" id="pool_product_collectible" alt="Le laboratoire"/>
                         </div>
                         <p>Lessive</p>
                     </div>
@@ -73,19 +74,19 @@
                     </div>
                     <div>
                         <div>
-                            <img src="medias/laboratoire/objects/tank.png" id="tank_collectible" alt="Le laboratoire"/>
+                            <img src="medias/laboratoire/objects/hairspray.png" id="hairspray_collectible" alt="Le laboratoire"/>
                         </div>
                         <p>Bidon</p>
                     </div>
                 </div>
             </div>
             <div class="background">
-                <video src="medias/background.mp4" type="video/mp4" autoplay="" loop="" muted="" data-keepplaying=""></video>
-            </div>
+                <video src="medias/background.mp4" type="video/mp4" autoplay="" loop="" muted="" data-keepplaying=""></video>            </div>
         </main>
     </body>
     <script type="text/javascript" src="js/timer.js"></script>
     <script type="text/javascript" src="js/alarm.js"></script>
+    <script type="text/javascript" src="js/ambiance.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/jquery.rwdImageMaps.min.js"></script>

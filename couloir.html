@@ -15,9 +15,12 @@
             <div class="timer_container">
                 <p id="timer"></p>
             </div>
-            <div id="next" class="flex-full-center next">
+            <div class="diapo" class="flex-full-center">
+                <img id="dead" src="medias/dead.jpg" alt="Vous etes mort">
+            </div>
+            <div class="flex-full-center next">
                 <div>
-                    <button class="commands" onclick="location.href='vaisseau.html'">Prochaine salle</button>
+                    <button id="next_button" class="commands" onclick="location.href='vaisseau.html'">Prochaine salle</button>
                 </div>
             </div>
             <div class="discussion">
@@ -63,10 +66,10 @@
             </div>
             <div class="scene_wrapper">
                 <div class="scene">
-                    <img src="medias/couloir/background.png" class="background-scene" alt="Le couloir" usemap="#alien">
+                    <img src="medias/couloir/background.png" id="background-scene" alt="Le couloir" usemap="#alien">
                     <img src="medias/couloir/object/licorn.png" id="licorn" alt="La licorne">
                     <img src="medias/couloir/furniture.png" class="scenery" alt="Le couloir">
-                    <img src="medias/couloir/plants.gif" id="plants" class="scenery" alt="Les plantes">
+                    <img src="medias/couloir/object/plants.gif" id="plants" class="scenery" alt="Les plantes">
                     <img src="medias/couloir/alarm.png" class="scenery alarm" alt="L'alarme">
                     <map name="alien">
                         <area alt="Alien souffrant" title="À l'aide..." coords="876,594,893,591,908,578,925,533,911,507,890,499,879,478,846,479,844,459,884,456,913,481,920,482,930,510,939,510,939,473,945,444,968,423,983,417,992,397,1006,377,1015,380,1001,392,995,411,1006,421,1015,429,1024,411,1012,406,1032,405,1035,423,1023,438,1023,456,1010,479,971,510,971,527,983,530,1001,534,1006,550,1012,571,1024,586,1027,598,1010,607,1001,588,998,560,981,550,965,537,959,568,968,580,974,595,974,612,962,632,957,598,957,580,946,563,949,536,936,556,931,571,920,586,905,600,884,607" shape="poly">
@@ -80,6 +83,7 @@
     </body>
     <script type="text/javascript" src="js/timer.js"></script>
     <script type="text/javascript" src="js/alarm.js"></script>
+    <script type="text/javascript" src="js/ambiance.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/jquery.rwdImageMaps.min.js"></script>

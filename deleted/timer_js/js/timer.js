@@ -31,6 +31,7 @@ window.onload = function() {
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
 
+
         if (minutes == 00 && seconds == 00){
             document.getElementById('timer').innerText = "BOUM EXPLOSION ARRRGHHHH *mort*";
         }else if(minutes <= 5){

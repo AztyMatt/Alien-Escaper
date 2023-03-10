@@ -37,6 +37,9 @@ const animateSequence = (idx => {
         if(++idx < pattern.length) {
             animateSequence(idx);
         }
+
+        var sound = new Audio('../medias/sound/vaisseau/sound.mp3');
+        sound.play();
     }, 1000);
 });
 
@@ -44,9 +47,13 @@ const nextSequence = (() => {
     let iteration=1
     console.log(level)
     if (level > 5){
+        var unlock = new Audio('../medias/sound/vaisseau/unlock.mp3');
+        unlock.play();
+        unlock.volume = 0.3;
         console.log("stop bg")
         container.addClass("lock");
         instructions.innerHTML = "Activation du protocole d'auto-destruction...";
+
         setTimeout(() => {
             var seconds = 10
             interval = setInterval(function () {
@@ -55,12 +62,17 @@ const nextSequence = (() => {
                     instructions.innerHTML = "Autodestruction !";
                     TweenMax.set([".simon_container"], {clearProps: 'all'});
                     TweenMax.set([".scene_wrapper"], {clearProps: 'all'});
-                    TweenMax.to(".diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 0})
+                    TweenMax.to("#diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 0})
+                    TweenMax.to("#diapo_1", 0, {autoAlpha:0, ease:"linear", delay: 2})
                     setTimeout(
                         function() {
-                            audio.play();
-                        }, 4000);
-                    TweenMax.to(".diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 2})
+                            var explosion = new Audio('../medias/sound/explosion.mp3');
+                            explosion.play();
+                        }, 2000);
+                    TweenMax.to("#diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 2})
+                    TweenMax.to("#diapo_2", 3, {autoAlpha:0, ease:"linear", delay: 4})
+                    TweenMax.to(".next", 1.5, {autoAlpha:1, pointerEvents:"inherit", ease:"linear", delay: 6})
+                    TweenMax.to(".commands", 1, {autoAlpha:1, ease:"linear", delay: 7})
                 
                     clearInterval(interval);
                 }
@@ -111,6 +123,9 @@ $('.color-btn').click(e => {
             nextSequence();
         }
     }
+
+    var sound = new Audio('../medias/sound/vaisseau/sound.mp3');
+    sound.play();
 });
 
 function play(){

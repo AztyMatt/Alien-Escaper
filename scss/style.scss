@@ -5,7 +5,7 @@
 @import 'vaisseau';
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-@import url(//db.onlinewebfonts.com/c/9a9ee05fac2f147530775797682ce685?family=Glipervelz);
+@import url('medias/fonts/Glipervelz.ttf');
 
 
 
@@ -90,8 +90,8 @@ area{
     transition: 1s;
 }
 
-#ambiance{
-    display: none;
+#dead_pop-up{
+    z-index: 35 !important;
 }
 
 .active{

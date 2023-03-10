@@ -38,7 +38,7 @@ const animateSequence = (idx => {
             animateSequence(idx);
         }
 
-        var sound = new Audio('../medias/sound/vaisseau/sound.mp3');
+        var sound = new Audio('./medias/sound/vaisseau/sound.mp3');
         sound.play();
     }, 1000);
 });
@@ -47,7 +47,7 @@ const nextSequence = (() => {
     let iteration=1
     console.log(level)
     if (level > 5){
-        var unlock = new Audio('../medias/sound/vaisseau/unlock.mp3');
+        var unlock = new Audio('./medias/sound/vaisseau/unlock.mp3');
         unlock.play();
         unlock.volume = 0.3;
         console.log("stop bg")
@@ -66,7 +66,7 @@ const nextSequence = (() => {
                     TweenMax.to("#diapo_1", 0, {autoAlpha:0, ease:"linear", delay: 2})
                     setTimeout(
                         function() {
-                            var explosion = new Audio('../medias/sound/explosion.mp3');
+                            var explosion = new Audio('./medias/sound/explosion.mp3');
                             explosion.play();
                         }, 2000);
                     TweenMax.to("#diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 2})
@@ -124,7 +124,7 @@ $('.color-btn').click(e => {
         }
     }
 
-    var sound = new Audio('../medias/sound/vaisseau/sound.mp3');
+    var sound = new Audio('./medias/sound/vaisseau/sound.mp3');
     sound.play();
 });
 

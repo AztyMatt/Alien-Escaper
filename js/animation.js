@@ -92,7 +92,7 @@ window.addEventListener('load', () => {
         .from(".timer_container", {autoAlpha:0, duration:1, ease:"linear"})
             TL.play();
 
-            var intro = new Audio('../medias/sound/couloir/intro.mp3');
+            var intro = new Audio('./medias/sound/couloir/intro.mp3');
             var played = false;
         
         var _is_translator_got = localStorage.getItem('_is_translator_got');
@@ -133,7 +133,7 @@ window.addEventListener('load', () => {
                     TL.play();
                 
                 setTimeout(() => {
-                    var charade = new Audio('../medias/sound/couloir/charade.mp3');
+                    var charade = new Audio('./medias/sound/couloir/charade.mp3');
                     charade.play();
                 }, 3000);
             }
@@ -146,7 +146,7 @@ window.addEventListener('load', () => {
             .from(".exit button", {autoAlpha:0, duration:1, ease:"linear"})
                 TL.play();
 
-            var idk = new Audio('../medias/sound/couloir/idk.mp3');
+            var idk = new Audio('./medias/sound/couloir/idk.mp3');
             idk.play();
         });
 

@@ -1,4 +1,4 @@
-var ambiance = new Audio('../medias/sound/ambiance.mp3');
+var ambiance = new Audio('./medias/sound/ambiance.mp3');
 addEventListener("mousemove", (event) => {
     if (ambiance.paused){
         ambiance.play();

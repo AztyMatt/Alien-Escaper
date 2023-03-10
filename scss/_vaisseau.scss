@@ -14,9 +14,15 @@
             display: flex;
             justify-content: space-between;
             padding: 30px;
-            height: 355px;
+            height: 375px;
             width: 1400px;
             display: flex;
+
+            @media all and (max-width: 1410px) {
+                & {
+                    transform: scale(0.7);
+                }
+            }
         }
     
         .dots{
@@ -63,7 +69,7 @@
             }
         
             .screen{
-                height: 230px;
+                height: 250px;
             }
         
             #bar{

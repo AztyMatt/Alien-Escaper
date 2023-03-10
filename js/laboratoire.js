@@ -1,4 +1,4 @@
-var intro = new Audio('../medias/sound/laboratoire/intro.mp3');
+var intro = new Audio('./medias/sound/laboratoire/intro.mp3');
 var played = false;
 var _is_laboratory_done = localStorage.getItem('_is_laboratory_done');
 var _is_laboratory_done = new RegExp("true").test(_is_laboratory_done);
@@ -11,7 +11,7 @@ function finish(){
         TweenMax.to("#diapo_1", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
         setTimeout(
             function() {
-                var explosion = new Audio('../medias/sound/explosion.mp3');
+                var explosion = new Audio('./medias/sound/explosion.mp3');
                 explosion.play();
             }, 4000);
         TweenMax.to("#diapo_2", 1, {autoAlpha:1, ease:"linear", delay: 4})
@@ -30,7 +30,7 @@ function finish(){
 
 if (_is_laboratory_done === true){
     alarm();
-    document.getElementById("background-scene").src="../medias/laboratoire/background_after.png";
+    document.getElementById("background-scene").src="./medias/laboratoire/background_after.png";
 }else{
     addEventListener("mousemove", (event) => {
         if (ambiance.duration > 0 && !ambiance.paused && played == false){
@@ -55,7 +55,7 @@ function objects(object, object_collectible){
     }else{
         object.onclick = function(e) {
             console.log(object.id)
-            var collect = new Audio('../medias/sound/laboratoire/'+object.id+'.mp3');
+            var collect = new Audio('./medias/sound/laboratoire/'+object.id+'.mp3');
             collect.play();
             appears();
             collected ++;

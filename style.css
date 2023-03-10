@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-@import url(//db.onlinewebfonts.com/c/9a9ee05fac2f147530775797682ce685?family=Glipervelz);
+@import url("medias/fonts/Glipervelz.ttf");
 #accueil {
   width: 100%;
   height: 100%;
@@ -13,6 +13,7 @@
 }
 #accueil #menu > div {
   width: 400px;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -74,7 +75,8 @@
   z-index: 20;
   -webkit-user-select: none;
   -moz-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
+      user-select: none;
 }
 #intro .carrousel .carrousel-btn > p > span {
   font-size: 60px !important;
@@ -205,9 +207,14 @@
   display: flex;
   justify-content: space-between;
   padding: 30px;
-  height: 355px;
+  height: 375px;
   width: 1400px;
   display: flex;
+}
+@media all and (max-width: 1410px) {
+  #vaisseau .simon_container > div {
+    transform: scale(0.7);
+  }
 }
 #vaisseau .simon_container .dots {
   height: 100%;
@@ -245,7 +252,7 @@
   padding: 20px;
 }
 #vaisseau .simon_container .screen_wrapper .screen {
-  height: 230px;
+  height: 250px;
 }
 #vaisseau .simon_container .screen_wrapper #bar {
   height: 40px;
@@ -338,7 +345,8 @@
   box-sizing: border-box;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
    supported by Chrome, Edge, Opera and Firefox */
 }
@@ -405,8 +413,8 @@ area {
   transition: 1s;
 }
 
-#ambiance {
-  display: none;
+#dead_pop-up {
+  z-index: 35 !important;
 }
 
 .active {

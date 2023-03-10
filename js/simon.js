@@ -13,7 +13,7 @@ const restart = (() => {
     playing = false;
     level = 0;
     pattern = [];
-    instructions.innerHTML = 'Raté ! Redémarrage en cours...<br>Tenez vous pret !';
+    instructions.innerHTML = 'Raté ! Redémarrage en cours...<br>Tenez-vous prêt !';
     setTimeout(() => {
         play();
     }, 1000);
@@ -31,7 +31,6 @@ const animateClick = ((color, clickClass) => {
 
 const animateSequence = (idx => {
     let color = pattern[idx];
-    console.log("pattern : "+pattern)
     setTimeout(() => {
         $('#' + color).fadeOut(200).fadeIn(200);
         if(++idx < pattern.length) {
@@ -45,14 +44,13 @@ const animateSequence = (idx => {
 
 const nextSequence = (() => {
     let iteration=1
-    console.log(level)
+
     if (level > 5){
         var unlock = new Audio('./medias/sound/vaisseau/unlock.mp3');
         unlock.play();
         unlock.volume = 0.3;
-        console.log("stop bg")
         container.addClass("lock");
-        instructions.innerHTML = "Activation du protocole d'auto-destruction...";
+        instructions.innerHTML = "Activation du protocole d'autodestruction...";
 
         setTimeout(() => {
             var seconds = 10
@@ -83,11 +81,10 @@ const nextSequence = (() => {
             iteration=4
         }
         for (var i = 0; i < iteration; i++) {
-            let idx = Math.floor(Math.random() * 4);                                         console.log("idx : "+idx);
-            let newColor = colors[idx];                                                      console.log("colors : "+colors);
+            let idx = Math.floor(Math.random() * 4);
+            let newColor = colors[idx];
             pattern.push(newColor);
-            ++level;                                                                         console.log("level : "+level);
-            console.log(iteration)
+            ++level;
             if(iteration !== 4){
                 instructions.innerHTML = 'Bien joué, niveau suivant !';
             }
@@ -96,7 +93,6 @@ const nextSequence = (() => {
         container.addClass("lock");
         animateSequence(0);
         setTimeout(() => {
-            console.log(pattern.length)
             container.removeClass("lock");
         }, (pattern.length * 1000) + 1000);
     }

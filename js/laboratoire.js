@@ -2,7 +2,6 @@ var intro = new Audio('./medias/sound/laboratoire/intro.mp3');
 var played = false;
 var _is_laboratory_done = localStorage.getItem('_is_laboratory_done');
 var _is_laboratory_done = new RegExp("true").test(_is_laboratory_done);
-console.log(_is_laboratory_done);
 
 var collected = 0;
 
@@ -20,15 +19,13 @@ function finish(){
         var next = document.getElementById("next_button");
         next.onclick = function(e) {
             var _is_laboratory_done = true;
-            console.log(_is_laboratory_done);
             localStorage.setItem('_is_laboratory_done', _is_laboratory_done);
-            console.log(localStorage.getItem('_is_laboratory_done'));
             location.href='couloir.html';
         }
     }
 }
 
-if (_is_laboratory_done === true){
+if (_is_laboratory_done == true){
     alarm();
     document.getElementById("background-scene").src="./medias/laboratoire/background_after.png";
 }else{
@@ -37,7 +34,6 @@ if (_is_laboratory_done === true){
             played = true;
             intro.play();
             intro.volume = 0.6;
-            console.log(played);
         }
     });
 }
@@ -54,12 +50,10 @@ function objects(object, object_collectible){
         appears();
     }else{
         object.onclick = function(e) {
-            console.log(object.id)
             var collect = new Audio('./medias/sound/laboratoire/'+object.id+'.mp3');
             collect.play();
             appears();
             collected ++;
-            console.log(collected);
             finish();
         }
     }

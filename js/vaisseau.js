@@ -8,7 +8,6 @@ addEventListener("mousemove", (event) => {
         played = true;
         intro.play();
         intro.volume = 0.6;
-        console.log(played);
     }
 });
 
@@ -24,7 +23,6 @@ input.addEventListener('input', (e)=>{
         input.addEventListener('input', (e)=>{
             var inputValue = input.value;
 
-            console.log(inputValue);
             if(inputValue=="ok"){
                 input.value = "";
                 instructions.innerHTML = 'Démarrage en cours...';

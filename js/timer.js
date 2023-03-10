@@ -33,25 +33,21 @@ window.onload = function() {
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
 
-        console.log(minutes)
-
         if (minutes == 00 && seconds == 00){
             document.getElementById('timer').innerText = "00:00";
-            TweenMax.to("#dead", 0.5, {autoAlpha:1, ease:"linear", delay: 2})
-            TweenMax.to("#dead_pop-up", 0.5, {autoAlpha:1, ease:"linear", delay: 5})
-            TweenMax.to(".exit button", 0.5, {autoAlpha:1, ease:"linear", delay: 6})
+            TweenMax.to("#dead", 0.5, {autoAlpha:1, ease:"linear", delay: 1})
+            TweenMax.to("#dead_pop-up", 0.5, {autoAlpha:1, ease:"linear", delay: 3})
+            TweenMax.to(".exit button", 0.5, {autoAlpha:1, ease:"linear", delay: 4})
             var restart = document.getElementById("restart")
             restart.onclick = function(e) {
                 location.href='laboratoire.html';
                 localStorage.clear();
             }
-            let dead = localStorage.setItem('dead',true);
+            dead = localStorage.setItem('dead',true);
         }else if(minutes <= 5){
             minutes = prependZero(minutes);
             seconds = prependZero(seconds);
             document.getElementById('timer').innerText = minutes+":"+seconds;
-        }else if(dead == true){
-            location.href='index.html';
         }
     }
 };

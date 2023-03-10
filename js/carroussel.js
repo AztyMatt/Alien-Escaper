@@ -19,9 +19,6 @@ function audio(){
         var audio = audios[i];
         var audio_namefile = audio.src.split('\\').pop().split('/').pop();
         var diapo = Math.abs(p-1);
-        console.log(audio)
-        console.log(audio_namefile)
-        console.log(diapo);
 
         if(audio_namefile == `diapo_${diapo}.mp3`){
             audio.volume = 0.4;
@@ -65,6 +62,6 @@ function hidden (){
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    alert("Cliquer sur OK pour nous autoriser à émettre du son!");
+    alert('Cliquez sur "OK" pour nous autoriser à émettre du son!');
     audio();
 });

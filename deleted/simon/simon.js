@@ -27,7 +27,6 @@ const animateClick = ((color, clickClass) => {
 
 const animateSequence = (idx => {
     let color = pattern[idx];
-    console.log("pattern : "+pattern)
     setTimeout(() => {
         $('#' + color).fadeOut(200).fadeIn(200);
         if(++idx < pattern.length) {
@@ -46,10 +45,10 @@ const nextSequence = (() => {
         iteration=4
     }
     for (var i = 0; i < iteration; i++) {
-        let idx = Math.floor(Math.random() * 4);                                         console.log("idx : "+idx);
-        let newColor = colors[idx];                                                      console.log("colors : "+colors);
+        let idx = Math.floor(Math.random() * 4);
+        let newColor = colors[idx];
         pattern.push(newColor);
-        $('p').text(++level);                                                            console.log("level : "+level);
+        $('p').text(++level);
     }
 });
 

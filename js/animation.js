@@ -47,6 +47,10 @@ window.addEventListener('load', () => {
     if (document.querySelector('#laboratoire') !== null){
         const TL = gsap.timeline({paused: true});
 
+        if(dead == true){
+            location.href='index.html';
+        }
+
         TL
         .from(".background", {autoAlpha:0, duration:1, ease:"linear"})
         .from(".scene_wrapper", {autoAlpha:0, duration:1, ease:"linear"})
@@ -56,7 +60,7 @@ window.addEventListener('load', () => {
         var _is_laboratory_done = localStorage.getItem('_is_laboratory_done');
         var _is_laboratory_done = new RegExp("true").test(_is_laboratory_done);
 
-        if(_is_laboratory_done === true){
+        if(_is_laboratory_done == true){
             TL
             .from(".timer_container", {autoAlpha:0, duration:1, ease:"linear"})
                 TL.play();
@@ -83,6 +87,14 @@ window.addEventListener('load', () => {
     //Couloir
     if (document.querySelector('#couloir') !== null){
         const TL = gsap.timeline({paused: true});
+        var _is_laboratory_done = localStorage.getItem('_is_laboratory_done');
+        var _is_laboratory_done = new RegExp("true").test(_is_laboratory_done);
+        var dead = localStorage.getItem('dead');
+        var dead = new RegExp("true").test(dead);
+
+        if (dead == true || _is_laboratory_done !== true){
+            location.href='index.html';
+        }
 
         alarm();
         start();
@@ -92,19 +104,18 @@ window.addEventListener('load', () => {
         .from(".timer_container", {autoAlpha:0, duration:1, ease:"linear"})
             TL.play();
 
-            var intro = new Audio('./medias/sound/couloir/intro.mp3');
-            var played = false;
+        var intro = new Audio('./medias/sound/couloir/intro.mp3');
+        var played = false;
         
         var _is_translator_got = localStorage.getItem('_is_translator_got');
         var _is_translator_got = new RegExp("true").test(_is_translator_got);
-        console.log(_is_translator_got);
+
         if (_is_translator_got !== true){
             addEventListener("mousemove", (event) => {
                 if (ambiance.duration > 0 && !ambiance.paused && played == false){
                     played = true;
                     intro.play();
                     intro.volume = 0.6;
-                    console.log(played);
                 }
             });
         }
@@ -112,7 +123,6 @@ window.addEventListener('load', () => {
         $('area').on('click', function() {
             var _is_translator_got = localStorage.getItem('_is_translator_got');
             var _is_translator_got = new RegExp("true").test(_is_translator_got);
-            console.log(_is_translator_got);
 
             TL
             .from(".discussion", {autoAlpha:0, duration:1, ease:"linear"})

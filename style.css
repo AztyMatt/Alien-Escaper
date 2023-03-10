@@ -339,6 +339,10 @@
   justify-content: end;
 }
 
+@font-face {
+  font-family: "Glipervelz";
+  src: url("medias/fonts/Glipervelz.ttf");
+}
 * {
   margin: 0;
   padding: 0;
